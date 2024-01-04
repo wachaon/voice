@@ -1,0 +1,19 @@
+{
+  "name": "voice",
+  "version": "0.0.1",
+  "description": "Handling audio with wes",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "wes usage",
+    "bundle": "wes bundle /player.cs /voices.js"
+  },
+  "keywords": [
+    "SAPI.SpVoice",
+    "VOICEVOX"
+  ],
+  "author": "wachaon",
+  "license": "MIT"
+}
