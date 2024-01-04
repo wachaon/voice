@@ -75,6 +75,33 @@ console.log(() => getVoiceID())
 wes voices
 ```
 
+## 辞書登録
+
+*dict* モジュールで辞書の取得・設定・削除ができます。
+
+```javascript
+const { getDict, setDict, deleteDict } = require('voice')
+setDict({
+    surface: 'VOICEVOX',
+    pronunciation: "ボイスボックス",
+    accent_type: 5,
+    word_type: 'PROPER_NOUN',
+    priority: 5
+})
+let dict = getDict()
+Object.keys(dict).forEach(id => {
+    if (dict[id].surface === 'ＶＯＩＣＥＶＯＸ') {
+        console.log(() => ['ＶＯＩＣＥＶＯＸ', dict[id]])
+        deleteDict(id)
+    }
+})
+```
+
+## 追加機能
+
+`speach()` は *query.json* 生成後に `transformer()` を指定でき、*json* を動的に変更することができます。
+
+
 [wes]: <https://github.com/wachaon/wes/>
 [VOICEVOX]: <https://voicevox.hiroshiba.jp/>
 [SAPIForVOICEVOX]: <https://github.com/shigobu/SAPIForVOICEVOX/>
