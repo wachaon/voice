@@ -1,5 +1,6 @@
 const { speak, speach, getVoices, getVoiceID, getDict, setDict, deleteDict } = require('./index')
 
+/*
 speak('こんにちは 世界')
 speak('OK GOOGLE 今日の天気は', { Voice: getVoices().Microsoft.Haruka.Desktop })
 // speak('僕はずんだもん。アレクサ、今何時？', { Voice: getVoices().VOICEVOX['ずんだもん']['ノーマル'] })
@@ -18,9 +19,11 @@ setDict({
     word_type: 'PROPER_NOUN',
     priority: 5
 })
+*/
 
 speach('こちらにあるVOICEVOXを使用すれば簡単に音声を生成できます。', { speaker: getVoiceID('ずんだもん', 'ささやき') })
 
+/*
 const dict = getDict()
 Object.keys(dict).forEach(id => {
     if (dict[id].surface === 'ＶＯＩＣＥＶＯＸ') {
@@ -34,3 +37,4 @@ Object.keys(dict).forEach(id => {
 })
 
 console.log(() => getDict())
+*/
