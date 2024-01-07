@@ -1,11 +1,9 @@
-// imports built-ins
-const { httprequest } = require('httprequest')
-
-// imports libraries
+// import library
 const compile = require('./lib/compile')
 const { getDict, setDict, deleteDict } = require('./lib/dict')
-const genQuery = require('./lib/genQuery')
-const genWav = require('./lib/genWav')
+const createProj = require('./lib/createProj')
+const createQuery = require('./lib/createQuery')
+const createWav = require('./lib/createWav')
 const getProcess = require('./lib/getProcess')
 const { getVoices, getVoiceID } = require('./lib/getVoices')
 const request = require('./lib/request')
@@ -13,14 +11,15 @@ const { getServer, initServer, serverError } = require('./lib/server')
 const speach = require('./lib/speach')
 const speak = require('./lib/speak')
 
-// exports
+// export
 module.exports = {
     compile,
     getDict,
     setDict,
     deleteDict,
-    genQuery,
-    genWav,
+    createProj,
+    createQuery,
+    createWav,
     getProcess,
     getVoices,
     getVoiceID,

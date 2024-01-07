@@ -77,7 +77,8 @@ wes voices
 
 ## 辞書登録
 
-*dict* モジュールで辞書の取得・設定・削除ができます。
+*dict* モジュールで辞書の取得・設定・削除ができます。辞書の `surface` はすべて全角で保存される。
+
 
 ```javascript
 const { getDict, setDict, deleteDict } = require('voice')
@@ -96,6 +97,27 @@ Object.keys(dict).forEach(id => {
     }
 })
 ```
+
+## プロジェクトの作成
+
+`createQuery()` で作成した *query* の配列を `createProj()` に渡すことで *.vvproj* というプロジェクトファイルを返します。
+
+```javascript
+const { writeFileSync } = require('filesystem')
+const { createQuery, createProj, getVoiceID } = require('voice')
+
+const zunda = getVoiceID('ずんだもん', 'ノーマル')
+const metan = getVoiceID('四国めたん', 'ノーマル') 
+const queries = [
+    createQuery('こんにちは。四国めたんです。', metan)
+    createQuery('はじめまして。ずんだもんです。', zunda)
+]
+const proj = createProj(queries)
+console.log(writeFileSync('hello.vvproj', JSON.stringify(proj), 'UTF-8'))
+```
+
+プロジェクトファイルは [*VOICEVOX*][VOICEVOX] で読み込むことができます。(プロジェクトファイルを `voice` から再生することはできません。)
+
 
 ## 追加機能
 

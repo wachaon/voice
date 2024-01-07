@@ -1,6 +1,6 @@
 {
   "name": "voice",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Handling audio with wes",
   "main": "index.js",
   "directories": {
